@@ -25,14 +25,14 @@ namespace EnvironmentTest
             env4.DBConnectionString = "1";
             env5.DBConnectionString = "2";
 
-            var e1 = ExecutionEnvironment3<TestEnvironment1>.InstanceEnv;
-            var e2 = ExecutionEnvironment3<TestEnvironment2>.InstanceEnv;
-            var e3 = ExecutionEnvironment3<TestEnvironment3>.InstanceEnv;
-            var e4 = ExecutionEnvironment3<TestEnvironment4>.InstanceEnv;
-            var e5 = ExecutionEnvironment3<TestEnvironment4>.InstanceEnv;
+            var e1 = ExecutionEnvironment3<TestEnvironment1>.Instance;
+            var e2 = ExecutionEnvironment3<TestEnvironment2>.Instance;
+            var e3 = ExecutionEnvironment3<TestEnvironment3>.Instance;
+            var e4 = ExecutionEnvironment3<TestEnvironment4>.Instance;
+            var e5 = ExecutionEnvironment3<TestEnvironment4>.Instance;
 
-            e4.DBConnectionString = "1";
-            e5.DBConnectionString = "2";
+            e4.Env.DBConnectionString = "1";
+            e5.Env.DBConnectionString = "2";
 
             Console.WriteLine( e1.GetHashCode().ToString());
             Console.WriteLine( e2.GetHashCode().ToString());

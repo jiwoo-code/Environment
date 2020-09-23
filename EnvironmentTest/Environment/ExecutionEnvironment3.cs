@@ -11,15 +11,19 @@ namespace EnvironmentTest.Environment
 {
     public class ExecutionEnvironment3<T> where T : IEnvironment, new()
     {
+        #region Singleton
+
         private static readonly Lazy<ExecutionEnvironment3<T>> instance = new Lazy<ExecutionEnvironment3<T>>(() => new ExecutionEnvironment3<T>());
 
-        public static T InstanceEnv
+        public static ExecutionEnvironment3<T> Instance
         {
             get
             {
-                return instance.Value.Env;
+                return instance.Value;
             }
         }
+
+        #endregion Singleton
 
         private readonly string EnvironmentFilePath;
 
