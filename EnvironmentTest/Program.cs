@@ -1,5 +1,8 @@
-﻿using EnvironmentTest.Environment;
+﻿using EnvironmentTest.Common;
+using EnvironmentTest.Common.ExtensionMethods;
+using EnvironmentTest.Environment;
 using System;
+using System.IO;
 
 namespace EnvironmentTest
 {
@@ -18,27 +21,26 @@ namespace EnvironmentTest
 
             var env1 = ExecutionEnvironment2<TestEnvironment1>.Instacne.Env;
             var env2 = ExecutionEnvironment2<TestEnvironment2>.Instacne.Env;
-            var env3 = ExecutionEnvironment2<TestEnvironment3>.Instacne.Env;
-            var env4 = ExecutionEnvironment2<TestEnvironment4>.Instacne.Env;
-            var env5 = ExecutionEnvironment2<TestEnvironment4>.Instacne.Env;
 
-            env4.DBConnectionString = "1";
-            env5.DBConnectionString = "2";
+            env2.TestA = "A";
 
             var e1 = ExecutionEnvironment3<TestEnvironment1>.Instance;
             var e2 = ExecutionEnvironment3<TestEnvironment2>.Instance;
             var e3 = ExecutionEnvironment3<TestEnvironment3>.Instance;
-            var e4 = ExecutionEnvironment3<TestEnvironment4>.Instance;
-            var e5 = ExecutionEnvironment3<TestEnvironment4>.Instance;
 
-            e4.Env.DBConnectionString = "1";
-            e5.Env.DBConnectionString = "2";
+            e3.Env.DBConnectionString = "1";
 
             Console.WriteLine( e1.GetHashCode().ToString());
             Console.WriteLine( e2.GetHashCode().ToString());
             Console.WriteLine( e3.GetHashCode().ToString());
-            Console.WriteLine( e4.GetHashCode().ToString());
-            Console.WriteLine( e5.GetHashCode().ToString());
+
+            var execution1 = ExecutionEnvironment4<TestEnvironment3>.Instance;
+            var execution2 = ExecutionEnvironment4<TestEnvironment4>.Instance;
+            execution1.Env.DBConnectionString = "execution1";
+            execution2.Env.DBConnectionString = "execution2";
+            execution1.Env.Save(execution1.EnvironmentFilePath);
+            execution2.Env.Save();
+            Console.WriteLine();
         }
     }
 }
