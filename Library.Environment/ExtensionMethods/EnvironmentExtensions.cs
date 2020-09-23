@@ -1,13 +1,11 @@
-﻿using EnvironmentTest.Common.Utilities;
-using EnvironmentTest.Environment.Interface;
+﻿using Library.Common;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace EnvironmentTest.Common.ExtensionMethods
+namespace Library.Environment
 {
     public static class EnvironmentExtensions
     {

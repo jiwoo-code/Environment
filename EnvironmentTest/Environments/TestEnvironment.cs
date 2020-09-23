@@ -1,11 +1,11 @@
-﻿using EnvironmentTest.Environment.Interface;
+﻿using Library.Environment;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace EnvironmentTest
 {
-    public class TestEnvironment4 : IEnvironment
+    public class TestEnvironment : IEnvironment
     {
         public string DBConnectionString { get; set; }
         public List<User> Users { get; set; }
@@ -13,23 +13,23 @@ namespace EnvironmentTest
 
         public void Initialize()
         {
-            DBConnectionString = "DBsldkfldsjfldsjflsjdf";
+            DBConnectionString = "DBConnectionString";
 
             Users = new List<User>()
             {
                 new User()
                 {
-                    Name = "abc",
+                    Name = "Name1",
                     Index = 1
                 },
                 new User()
                 {
-                    Name = "def",
+                    Name = "Name2",
                     Index = 2
                 },
                 new User()
                 {
-                    Name = "ghi",
+                    Name = "Name2",
                     Index = 3
                 },
             };

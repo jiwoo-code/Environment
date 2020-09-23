@@ -1,10 +1,10 @@
-﻿using EnvironmentTest.Properties;
+﻿using Library.Common.Properties;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace EnvironmentTest.Common.Utilities
+namespace Library.Common.Utilities
 {
     public static class DirectoryUtilities
     {

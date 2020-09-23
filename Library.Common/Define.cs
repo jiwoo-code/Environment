@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace EnvironmentTest.Common
+namespace Library.Common
 {
     public static class Define
     {

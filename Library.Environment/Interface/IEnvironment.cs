@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EnvironmentTest.Environment.Interface
+namespace Library.Environment
 {
     public interface IEnvironment
     {
